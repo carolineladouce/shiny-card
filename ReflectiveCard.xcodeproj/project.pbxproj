@@ -15,6 +15,7 @@
 		C61835A427A1CE2D00D3D98C /* ReflectiveCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61835A327A1CE2D00D3D98C /* ReflectiveCardTests.swift */; };
 		C61835AE27A1CE2D00D3D98C /* ReflectiveCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61835AD27A1CE2D00D3D98C /* ReflectiveCardUITests.swift */; };
 		C61835B027A1CE2D00D3D98C /* ReflectiveCardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61835AF27A1CE2D00D3D98C /* ReflectiveCardUITestsLaunchTests.swift */; };
+		C61835BD27A1DAF800D3D98C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61835BC27A1DAF800D3D98C /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C61835A927A1CE2D00D3D98C /* ReflectiveCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReflectiveCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61835AD27A1CE2D00D3D98C /* ReflectiveCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectiveCardUITests.swift; sourceTree = "<group>"; };
 		C61835AF27A1CE2D00D3D98C /* ReflectiveCardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectiveCardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C61835BC27A1DAF800D3D98C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				C618358C27A1CE2B00D3D98C /* AppDelegate.swift */,
 				C618358E27A1CE2B00D3D98C /* SceneDelegate.swift */,
 				C618359027A1CE2B00D3D98C /* MainViewController.swift */,
+				C61835BC27A1DAF800D3D98C /* CardView.swift */,
 				C618359527A1CE2C00D3D98C /* Assets.xcassets */,
 				C618359727A1CE2C00D3D98C /* LaunchScreen.storyboard */,
 				C618359A27A1CE2C00D3D98C /* Info.plist */,
@@ -256,6 +259,7 @@
 			files = (
 				C618359127A1CE2B00D3D98C /* MainViewController.swift in Sources */,
 				C618358D27A1CE2B00D3D98C /* AppDelegate.swift in Sources */,
+				C61835BD27A1DAF800D3D98C /* CardView.swift in Sources */,
 				C618358F27A1CE2B00D3D98C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
