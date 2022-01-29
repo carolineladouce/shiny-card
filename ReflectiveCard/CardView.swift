@@ -36,19 +36,27 @@ class CardView: UIView {
         let cardPathRightBottomPoint = CGPoint(x: 337, y: 212.5)
         let cardPathLeftBottomPoint = CGPoint(x: 0, y: 212.5)
         
-        let cardShapePath = UIBezierPath()
+//        let cardShapePath = UIBezierPath()
+//
+//        cardShapePath.move(to: CGPoint(x: cardPathOrigin.x, y: cardPathOrigin.y))
+//        cardShapePath.addLine(to: CGPoint(x: cardPathRightTopPoint.x, y: cardPathRightTopPoint.y))
+//        cardShapePath.addLine(to: CGPoint(x: cardPathRightBottomPoint.x, y: cardPathRightBottomPoint.y))
+//        cardShapePath.addLine(to: CGPoint(x: cardPathLeftBottomPoint.x, y: cardPathLeftBottomPoint.y))
+//        cardShapePath.close()
+//
+//        grayColor.setStroke()
+//        cardShapePath.lineWidth = cardEdgeLineWidth
         
-        cardShapePath.move(to: CGPoint(x: cardPathOrigin.x, y: cardPathOrigin.y))
-        cardShapePath.addLine(to: CGPoint(x: cardPathRightTopPoint.x, y: cardPathRightTopPoint.y))
-        cardShapePath.addLine(to: CGPoint(x: cardPathRightBottomPoint.x, y: cardPathRightBottomPoint.y))
-        cardShapePath.addLine(to: CGPoint(x: cardPathLeftBottomPoint.x, y: cardPathLeftBottomPoint.y))
-        cardShapePath.close()
+//        cardShapePath.stroke()
         
-        grayColor.setStroke()
-        cardShapePath.lineWidth = cardEdgeLineWidth
-        
-        cardShapePath.stroke()
-        
+        let roundedCardRect = CGRect(x: 0, y: 0, width: 337, height: 212.5)
+        let roundedCardShapePath = UIBezierPath(roundedRect: roundedCardRect, cornerRadius: 10)
+    
+        UIColor.lightGray.setFill()
+        roundedCardShapePath.lineWidth = 4
+    
+        roundedCardShapePath.fill()
+   
         context.restoreGState()
     }
     
