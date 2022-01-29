@@ -56,6 +56,12 @@ class CardView: UIView {
         roundedCardShapePath.lineWidth = 4
     
         roundedCardShapePath.fill()
+        
+        let innerRect = CGRect(x: 2, y: 2, width: 333, height: 208.5)
+        let innerRectPath = UIBezierPath(roundedRect: innerRect, cornerRadius: 8)
+        
+        UIColor.white.setFill()
+        innerRectPath.fill()
    
         context.restoreGState()
     }
