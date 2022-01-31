@@ -41,7 +41,7 @@ class CardView: UIView {
         let roundedCardShapePath = UIBezierPath(roundedRect: roundedCardRect, cornerRadius: roundedRectCornerRadius)
         
         UIColor.lightGray.setFill()
-        roundedCardShapePath.lineWidth = cardEdgeLineWidth  
+        roundedCardShapePath.lineWidth = cardEdgeLineWidth
         
         roundedCardShapePath.fill()
         
@@ -91,7 +91,17 @@ class CardView: UIView {
         context.saveGState()
         
         
+        let baseCircle1 = UIBezierPath(ovalIn: CGRect(x: cardSizeWidth - (cardSizeWidth / 3.5), y: cardSizeHeight - (cardSizeHeight / 2.5), width: cardSizeHeight / 4.5, height: cardSizeHeight / 4.5))
+        UIColor.gray.setStroke()
+        baseCircle1.lineWidth = 3
+        baseCircle1.stroke()
         
+        let baseCircle2 = UIBezierPath(ovalIn: CGRect(x: cardSizeWidth - (cardSizeWidth / 4.75), y: cardSizeHeight - (cardSizeHeight / 2.5), width: cardSizeHeight / 4.5, height: cardSizeHeight / 4.5))
+        UIColor.gray.setStroke()
+        baseCircle2.lineWidth = 3
+        baseCircle2.stroke()
+        
+
         context.restoreGState()
     }
     
