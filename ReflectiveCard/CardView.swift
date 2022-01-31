@@ -17,6 +17,11 @@ class CardView: UIView {
      }
      */
     
+    let cardSizeWidth: CGFloat = 337
+    let cardSizeHeight: CGFloat = 212.5
+    let innerRectXY: CGFloat = 2
+    let roundedRectCornerRadius: CGFloat = 10
+    
     let cardEdgeLineWidth: CGFloat = 4
     let grayColor: UIColor = UIColor.systemGray
     
@@ -32,17 +37,17 @@ class CardView: UIView {
         context.fill(bounds)
         
         // Draw gray base rounded rectangle
-        let roundedCardRect = CGRect(x: 0, y: 0, width: 337, height: 212.5)
-        let roundedCardShapePath = UIBezierPath(roundedRect: roundedCardRect, cornerRadius: 10)
+        let roundedCardRect = CGRect(x: 0, y: 0, width: cardSizeWidth, height: cardSizeHeight)
+        let roundedCardShapePath = UIBezierPath(roundedRect: roundedCardRect, cornerRadius: roundedRectCornerRadius)
         
         UIColor.lightGray.setFill()
-        roundedCardShapePath.lineWidth = 4
+        roundedCardShapePath.lineWidth = cardEdgeLineWidth  
         
         roundedCardShapePath.fill()
         
         // Draw white rounded rectangle
-        let innerRect = CGRect(x: 2, y: 2, width: 333, height: 208.5)
-        let innerRectPath = UIBezierPath(roundedRect: innerRect, cornerRadius: 8)
+        let innerRect = CGRect(x: innerRectXY, y: innerRectXY, width: cardSizeWidth - (innerRectXY * 2), height: cardSizeHeight - (innerRectXY * 2))
+        let innerRectPath = UIBezierPath(roundedRect: innerRect, cornerRadius: roundedRectCornerRadius - innerRectXY)
         
         UIColor.white.setFill()
         innerRectPath.fill()
@@ -69,19 +74,22 @@ class CardView: UIView {
         
         let gradientColorLocations: [CGFloat] = [0.0, 1.0]
         let gradientStartPoint = CGPoint(x: 0, y: 0)
-        let gradientEndPoint = CGPoint(x: 337, y: 212.5)
+        let gradientEndPoint = CGPoint(x: cardSizeHeight, y: cardSizeWidth)
         
         guard let colorGradient = CGGradient(colorSpace: colorSpace, colorComponents: colorComponents, locations: gradientColorLocations, count: 2) else { return }
         
         // Clip gradient rectangle to a rounded rectangle shape
-        let gradientClipPathRoundedRect = CGRect(x: 0, y: 0, width: 337, height: 212.5)
-        let gradientClipPath = UIBezierPath(roundedRect: gradientClipPathRoundedRect, cornerRadius: 10)
+        let gradientClipPathRoundedRect = CGRect(x: 0, y: 0, width: cardSizeWidth, height: cardSizeHeight)
+        let gradientClipPath = UIBezierPath(roundedRect: gradientClipPathRoundedRect, cornerRadius: roundedRectCornerRadius)
         
         context.saveGState()
         
         gradientClipPath.addClip()
         
         context.drawLinearGradient(colorGradient, start: gradientStartPoint, end: gradientEndPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        
+        context.saveGState()
+        
         
         
         context.restoreGState()
