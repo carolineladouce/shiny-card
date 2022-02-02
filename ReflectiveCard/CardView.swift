@@ -51,6 +51,17 @@ class CardView: UIView {
         
         UIColor.white.setFill()
         innerRectPath.fill()
+    
+        
+        let baseCircle1 = UIBezierPath(ovalIn: CGRect(x: cardSizeWidth - (cardSizeWidth / 3.5), y: cardSizeHeight - (cardSizeHeight / 2.5), width: cardSizeHeight / 4.5, height: cardSizeHeight / 4.5))
+        UIColor.darkGray.setStroke()
+        baseCircle1.lineWidth = 3
+        baseCircle1.stroke()
+        
+        let baseCircle2 = UIBezierPath(ovalIn: CGRect(x: cardSizeWidth - (cardSizeWidth / 4.75), y: cardSizeHeight - (cardSizeHeight / 2.5), width: cardSizeHeight / 4.5, height: cardSizeHeight / 4.5))
+        UIColor.darkGray.setStroke()
+        baseCircle2.lineWidth = 3
+        baseCircle2.stroke()
         
         
         // Draw gradient rectangle
@@ -91,17 +102,6 @@ class CardView: UIView {
         context.saveGState()
         
         
-        let baseCircle1 = UIBezierPath(ovalIn: CGRect(x: cardSizeWidth - (cardSizeWidth / 3.5), y: cardSizeHeight - (cardSizeHeight / 2.5), width: cardSizeHeight / 4.5, height: cardSizeHeight / 4.5))
-        UIColor.darkGray.setStroke()
-        baseCircle1.lineWidth = 3
-        baseCircle1.stroke()
-        
-        let baseCircle2 = UIBezierPath(ovalIn: CGRect(x: cardSizeWidth - (cardSizeWidth / 4.75), y: cardSizeHeight - (cardSizeHeight / 2.5), width: cardSizeHeight / 4.5, height: cardSizeHeight / 4.5))
-        UIColor.darkGray.setStroke()
-        baseCircle2.lineWidth = 3
-        baseCircle2.stroke()
-        
-        
         let circleOverlay1 = UIBezierPath(ovalIn: CGRect(x: cardSizeWidth - (cardSizeWidth / 3.5), y: cardSizeHeight - (cardSizeHeight / 2.5), width: cardSizeHeight / 4.5, height: cardSizeHeight / 4.5))
         UIColor.white.setStroke()
         circleOverlay1.lineWidth = 1
@@ -112,7 +112,8 @@ class CardView: UIView {
         UIColor.white.setStroke()
         circleOverlay2.lineWidth = 1
         circleOverlay2.stroke()
-
+        
+        
         context.restoreGState()
     }
     
