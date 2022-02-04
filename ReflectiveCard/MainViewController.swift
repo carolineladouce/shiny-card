@@ -11,16 +11,42 @@ class MainViewController: UIViewController {
     
     let cardView = CardView()
     
+    let testShinyView = TestShinyView()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         view.backgroundColor = .white
         
-        view.addSubview(cardView)
-        setupCardView()
+        //        view.addSubview(cardView)
+        //        setupCardView()
+        
+        
+        view.addSubview(testShinyView)
+        setupShinyView()
         
         self.view = view
+    }
+    
+    
+    
+    func setupShinyView() {
+        testShinyView.backgroundColor = UIColor.clear
+        
+        testShinyView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let testShinyViewConstraints = [
+            testShinyView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            testShinyView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            testShinyView.widthAnchor.constraint(equalToConstant: 350),
+            testShinyView.heightAnchor.constraint(equalToConstant: 350)
+
+        ]
+        
+        NSLayoutConstraint.activate(testShinyViewConstraints)
     }
     
     
